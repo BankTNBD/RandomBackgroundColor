@@ -26,6 +26,11 @@ export default function Home() {
     return out
   }
 
+  async function copyColor() {
+    await navigator.clipboard.writeText(hex);
+
+  }
+
   return (
     <div className={styles.page}>
       <div className={styles.palette}>
@@ -35,7 +40,9 @@ export default function Home() {
         <div style={{ backgroundColor: `rgba(${color}, 0.4)` }}></div>
       </div>
       <div className={styles.button_container}>
-        <div className={styles.color_label}>{hex}</div>
+        <div className={styles.color_label} onClick={copyColor}>{hex}
+          <span className={styles.color_label_tip}>Click to copy</span>
+        </div>
         <button className={styles.button} onClick={randomColor}>Random</button>
       </div>
     </div>

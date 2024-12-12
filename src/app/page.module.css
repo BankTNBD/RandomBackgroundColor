@@ -31,6 +31,29 @@
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.color_label_tip {
+  visibility: hidden;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 400;
+  
+  position: absolute;
+  z-index: 1;
+  transition-property: visibility;
+  transition-delay: 0s;
+}
+
+.color_label:hover .color_label_tip {
+  visibility: visible;
+  transition-delay: 0.1s;
 }
 
 .button {
